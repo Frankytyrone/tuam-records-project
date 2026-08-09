@@ -1,0 +1,20 @@
+title: Tuam Records Project
+description: >-
+  A public archive of documents, claims, corrections, official records,
+  and source evidence relating to the Tuam Mother and Baby Home.
+url: "https://tuamrecordsproject.ie"
+lang: en
+
+markdown: kramdown
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - README.md

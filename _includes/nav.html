@@ -1,0 +1,12 @@
+<div class="pathway-label">Explore the Evidence Pathway</div>
+<nav class="pathway" aria-label="Evidence pathway">
+  <ul>
+    <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="current"{% endif %}>Home</a></li>
+    <li><a href="{{ '/start-here/' | relative_url }}" {% if page.url == '/start-here/' %}class="current"{% endif %}>Start Here</a></li>
+    <li><a href="{{ '/methodology/' | relative_url }}" {% if page.url == '/methodology/' %}class="current"{% endif %}>Methodology</a></li>
+    <li><a href="{{ '/documents/' | relative_url }}" {% if page.url == '/documents/' %}class="current"{% endif %}>Documents</a></li>
+    <li><a href="{{ '/timeline/' | relative_url }}" {% if page.url == '/timeline/' %}class="current"{% endif %}>Timeline</a></li>
+    <li><a href="{{ '/claims/' | relative_url }}" {% if page.url == '/claims/' %}class="current"{% endif %}>Claims</a></li>
+    <li><a href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}class="current"{% endif %}>Contact</a></li>
+  </ul>
+</nav>
