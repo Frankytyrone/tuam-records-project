@@ -41,7 +41,8 @@ The owner (Frank) is not a technical person and is openly biased toward the Bon 
 - [x] TRP-004/005: Fifth Interim Report (burials), 2024 peer-reviewed infant-mortality study
 - [x] TRP-006 to TRP-009, TRP-012: Bon Secours & Catholic Church statements (2014 Prone email, 2017 statement, 2021 apology; Archbishop Neary and Archbishop Martin 2021 statements)
 - [x] TRP-010/011: ODAIT forensic excavation updates (2025–2026)
-- [ ] Not yet added: survivor/witness testimony, illegal adoption allegations documents, general media coverage & corrections, local/historical records — **in progress via cloud agent as of 10 Aug 2026**
+- [x] TRP-013/014: Chapter 32 (Adoption) and Report of the Confidential Committee — added 10 Aug 2026 via cloud agent
+- [ ] Not yet added: general media coverage & corrections, local/historical records, dedicated survivor/witness testimony (e.g. memoirs, recorded interviews) as standalone catalogued documents
 
 **Phase 3 — Claim vs Evidence: in progress**
 - [x] "Septic tank" claim (nuanced: two structures, remains found in the undetermined-purpose chamber, not the tank itself)
@@ -50,8 +51,8 @@ The owner (Frank) is not a technical person and is openly biased toward the Bon 
 - [x] "No mass grave" 2014 denial vs later official findings
 - [x] "The Catholic Church ran the home" — imprecise; Council owned it, Sisters operated it, diocese was pastoral only
 - [x] "Bon Secours never apologised" — true for 2017, false after Jan 2021
-- [ ] Illegal adoption allegations — **in progress**
-- [ ] Survivor/witness testimony — **in progress**
+- [x] Illegal adoption allegations — Commission's Chapter 32 findings vs. common media framing and Corless/Clann Project criticism (added 10 Aug 2026)
+- [x] Survivor/witness testimony on conditions — Confidential Committee/individual testimony vs. the Commission's own summary language (added 10 Aug 2026)
 
 **Phase 4 — Advanced search & tools: not started**
 **Phase 5 — SEO & growth: not started** (don't start until content above is solid)
