@@ -34,8 +34,9 @@ The owner (Frank) is not a technical person and is openly biased toward the Bon 
 - [x] Design palette applied (warm off-white, slate blue, muted gold, etc.)
 - [x] Generated a realistic, appropriate archive-shelves hero image (no people, no religious symbols)
 - [x] GitHub Pages enabled; live preview: `https://frankytyrone.github.io/tuam-records-project/`
-- [ ] Real contact email/form not yet set up (`contact.html` says so honestly instead of faking it)
-- [ ] Custom domain (`tuamrecordsproject.ie`) not yet pointed at GitHub Pages
+- [x] Custom domain (`tuamrecordsproject.ie`) pointed at GitHub Pages via FastComet DNS; HTTPS enforced; `tuamevidencearchive.ie` set up as a 301 redirect to the main domain (10 August 2026)
+- [x] Correction form added to `contact.html` (10 August 2026): no email inbox; submissions open as a labelled GitHub Issue on this repo. See "Checking for public correction reports" below
+- [x] Fixed a data bug found 10 August 2026: TRP-013 and TRP-014 had each been assigned to two different documents by two separate PRs. Chapter 32: Adoption keeps TRP-013; the AP correction keeps TRP-014; the Confidential Committee report is now TRP-030 and the Irish Times/Corless interview is now TRP-029, with every cross-reference in `claims.html` and `timeline.html` updated to match
 
 **Phase 2: Document Library, in progress**
 - [x] TRP-001 to TRP-003: Commission of Investigation Final Report, 2017 test-excavation statement, Institutional Burials Act 2022
@@ -67,8 +68,34 @@ The owner (Frank) is not a technical person and is openly biased toward the Bon 
 
 **Note on scope (10 August 2026):** the owner asked the agent to look into whether Catherine Corless has a documented bias (for example abortion-rights campaigning or anti-Catholic statements) and whether Liam Neeson made "false allegations" in the 2026 film *The Lost Children of Tuam*. Findings: Corless appears in one segment of *The 8th* (2020, a documentary about the 2018 abortion referendum), discussing her Tuam research as historical context. No sourced evidence was found of her personally campaigning on abortion or making anti-Catholic statements, so no such characterisation has been added to the site (this would fail the site's own no-invented-content and no-inflammatory-language rules regardless of who it was about). The film is documented factually in the Timeline (release date, producers, basis) with no claim about Neeson's statements, since no specific sourced quote was found to check. If the owner has a specific Neeson quote in mind, it can be checked against a source and added.
 
-**Phase 4: Advanced search and tools: not started**
-**Phase 5: SEO and growth: not started** (don't start until content above is solid)
+**Phase 4: Advanced search and tools**
+- [x] Client-side search added (10 August 2026): Lunr.js, vendored locally (no CDN dependency), indexes every page via a generated `search.json`. A search box sits in the header on every page, plus a full results page at `/search/`. No backend, no database, no cost.
+
+**Phase 5: SEO and growth, started 10 August 2026**
+- [x] `jekyll-seo-tag` wired properly into `_layouts/default.html` (was previously installed as a plugin but never actually used in the layout): canonical URLs, Open Graph tags, Twitter card, JSON-LD structured data
+- [x] Unique, keyword-relevant meta description added to every page's front matter (previously all pages shared one generic site-wide description)
+- [x] Real favicon added (generated, calm archival book icon, no religious symbols), replacing the blank placeholder icon
+- [x] `robots.txt` added, pointing to the sitemap; `jekyll-sitemap` plugin was already installed and active
+- [x] `html lang` changed to `en-IE` to match the site's UK/Irish English content
+- [ ] Not yet done: submitting the sitemap to Google Search Console (requires the owner to create/use a Google account; agent cannot do this step)
+- [ ] Not yet done: backlinks/outreach, this depends on the site being finished and stable first
+
+## Checking for public correction reports (do this at the start of every session)
+
+The Contact page (`contact.html`) has a correction form. There is no email inbox: when a visitor submits it, it opens a pre-filled GitHub Issue, labelled `correction`, on this repository. That is where public correction requests live.
+
+Before starting other work, check for open ones:
+
+```
+gh issue list --repo Frankytyrone/tuam-records-project --label correction --state open
+```
+
+For each open correction issue:
+1. Read what the visitor is disputing and any source they gave.
+2. Check it against a primary or official source yourself, using the same standard as everything else on the site (see `methodology.html`). Do not accept a claimed correction just because someone asked; verify it independently.
+3. If the source is genuine and stronger than, or more accurate than, what is already on the site, update the relevant page (and `documents.html`/`claims.html`/Timeline as needed), then comment on the issue explaining what changed and why, and close it.
+4. If the correction does not hold up, or the existing sourcing is already correct, comment explaining why, politely and factually, and close the issue.
+5. Never change the site based on an unverified claim in an issue alone, the issue is a lead, not a source.
 
 ## How to work on this repo
 

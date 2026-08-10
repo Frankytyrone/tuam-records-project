@@ -1,0 +1,30 @@
+name: CI build check
+
+on:
+  push:
+    branches-ignore:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: false
+      - name: Install Jekyll and plugins
+        run: gem install jekyll jekyll-sitemap jekyll-seo-tag
+      - name: Build site
+        run: jekyll build --trace
+      - name: Show generated search index (first 2000 chars)
+        run: head -c 2000 _site/search.json
+      - name: Validate search.json is valid JSON
+        run: python3 -c "import json; json.load(open('_site/search.json')); print('search.json is valid JSON')"
+      - name: Upload built site
+        uses: actions/upload-artifact@v4
+        with:
+          name: built-site
+          path: _site

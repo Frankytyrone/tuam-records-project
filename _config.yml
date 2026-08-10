@@ -3,7 +3,9 @@ description: >-
   A public archive of documents, claims, corrections, official records,
   and source evidence relating to the Tuam Mother and Baby Home.
 url: "https://tuamrecordsproject.ie"
-lang: en
+lang: en-IE
+logo: /assets/images/favicon.png
+locale: en_IE
 
 markdown: kramdown
 plugins:

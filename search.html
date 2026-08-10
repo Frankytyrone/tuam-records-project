@@ -1,0 +1,26 @@
+---
+layout: default
+title: Search
+permalink: /search/
+description: Search the Tuam Records Project archive for documents, claims, timeline entries and sources.
+---
+
+<section class="block">
+  <div class="wrap" style="max-width:760px;">
+    <h1>Search the Archive</h1>
+    <p>Search across every page on this site: the Document Library, Claims &amp; Evidence, Timeline, and Methodology. Try a name, a date, a document ID (for example "TRP-015"), or a phrase.</p>
+
+    <div class="search-box">
+      <input type="search" id="search-input" placeholder="Search the archive..." autocomplete="off" aria-label="Search the archive">
+    </div>
+
+    <div id="search-status" class="source-note" aria-live="polite"></div>
+    <div id="search-results"></div>
+  </div>
+</section>
+
+<script src="{{ '/assets/js/lunr.min.js' | relative_url }}"></script>
+<script>
+  window.TRP_SEARCH_INDEX_URL = "{{ '/search.json' | relative_url }}";
+</script>
+<script src="{{ '/assets/js/search.js' | relative_url }}"></script>
