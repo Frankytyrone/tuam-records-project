@@ -15,8 +15,8 @@ jobs:
         with:
           ruby-version: '3.2'
           bundler-cache: false
-      - name: Install Jekyll
-        run: gem install jekyll
+      - name: Install Jekyll and plugins
+        run: gem install jekyll jekyll-sitemap jekyll-seo-tag
       - name: Build site
         run: jekyll build --trace
       - name: Show generated search index (first 2000 chars)

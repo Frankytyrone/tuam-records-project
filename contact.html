@@ -2,27 +2,96 @@
 layout: default
 title: Contact
 permalink: /contact/
+description: >-
+  How to report a correction or suggest a source for the Tuam Records
+  Project archive.
 ---
 
 <section class="block">
   <div class="wrap" style="max-width:700px;">
     <h1>Contact &amp; Corrections</h1>
-    <p>This is a source archive rather than a general enquiries desk, and it is not staffed day to day. We do want to hear about genuine errors: a wrong date, a misquoted source, a broken link, or a document that should be added. Every correction is checked against a source before anything on the site is changed.</p>
+    <p>This is a source archive rather than a general enquiries desk, and it is not staffed day to day. We do want to hear about genuine errors: a wrong date, a misquoted source, a broken link, or a document that should be added. Every correction is checked against a source, using the same standard set out in our <a href="{{ '/methodology/' | relative_url }}">methodology</a>, before anything on the site is changed.</p>
 
     <div class="panel">
-      <h3>Report a correction</h3>
-      <p>The fastest way to reach us is to open a correction report on the project's public GitHub page. You do not need a GitHub account to read existing reports, but you do need one (free to create) to submit a new one.</p>
-      <p><a class="btn btn-primary" href="https://github.com/Frankytyrone/tuam-records-project/issues/new?labels=correction&amp;title=Correction%3A+%5Bpage+name%5D&amp;body=Page%3A%20(which%20page%20is%20this%20about%3F)%0A%0AStatement%20in%20question%3A%20(quote%20or%20describe%20the%20exact%20text)%0A%0AWhat%20you%20believe%20is%20wrong%20or%20missing%3A%0A%0ASource%20we%20can%20check%20(if%20you%20have%20one)%3A%0A" target="_blank" rel="noopener">Open a correction report on GitHub &rarr;</a></p>
-      <p class="source-note">Reports are public and reviewed when time allows. This is a small, unfunded project maintained at intervals rather than continuously, so please allow time for a response.</p>
+      <h3>Correction form</h3>
+      <p>Fill in the fields below. When you submit, your report opens as a new item on the project's public GitHub page, ready to send. You will need a free GitHub account to send it; if you don't have one, <a href="https://github.com/signup" target="_blank" rel="noopener">signing up</a> takes a couple of minutes and costs nothing.</p>
+
+      <form id="correction-form" novalidate>
+        <div class="form-row">
+          <label for="corr-page">Which page is this about?</label>
+          <select id="corr-page" name="page">
+            <option value="Home">Home</option>
+            <option value="Start Here">Start Here</option>
+            <option value="Methodology">Methodology</option>
+            <option value="Document Library" selected>Document Library</option>
+            <option value="Timeline">Timeline</option>
+            <option value="Claims &amp; Evidence">Claims &amp; Evidence</option>
+            <option value="Other / not sure">Other / not sure</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="corr-statement">The exact statement or claim you're asking about</label>
+          <textarea id="corr-statement" name="statement" rows="2" placeholder="Quote or describe the specific sentence, date or figure" required></textarea>
+        </div>
+
+        <div class="form-row">
+          <label for="corr-issue">What you believe is wrong or missing</label>
+          <textarea id="corr-issue" name="issue" rows="3" required></textarea>
+        </div>
+
+        <div class="form-row">
+          <label for="corr-source">A source we can check (a link or a full citation, if you have one)</label>
+          <input type="text" id="corr-source" name="source" placeholder="Optional, but a correction is far easier to check with a source">
+        </div>
+
+        <div class="form-row">
+          <label for="corr-name">Your name (optional)</label>
+          <input type="text" id="corr-name" name="name" placeholder="Leave blank to submit anonymously">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Open this as a correction report on GitHub &rarr;</button>
+      </form>
+      <p id="corr-status" class="source-note" role="status"></p>
     </div>
 
-    <h2>What to include</h2>
-    <ul>
-      <li>Which page and which specific statement you're asking about</li>
-      <li>What you believe is inaccurate or missing</li>
-      <li>A source we can check, if you have one</li>
-    </ul>
-
-    <p class="source-note">No email address is published for this project, and none is planned. Using the correction report above keeps a public, dated record of every request and how it was handled, which fits how this archive is meant to work.</p>
+    <p class="source-note">No email address is published for this project, and none is planned. Every report submitted this way stays as a permanent, dated, public record in the project's repository, which fits how this archive is meant to work: checkable, not private.</p>
   </div>
 </section>
+
+<script>
+  (function () {
+    var form = document.getElementById("correction-form");
+    var status = document.getElementById("corr-status");
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var page = document.getElementById("corr-page").value;
+      var statement = document.getElementById("corr-statement").value.trim();
+      var issue = document.getElementById("corr-issue").value.trim();
+      var source = document.getElementById("corr-source").value.trim();
+      var name = document.getElementById("corr-name").value.trim();
+
+      if (!statement || !issue) {
+        status.textContent = "Please fill in the statement and what you believe is wrong before continuing.";
+        return;
+      }
+
+      var body = "Page: " + page + "\n\n" +
+        "Statement in question: " + statement + "\n\n" +
+        "What I believe is wrong or missing: " + issue + "\n\n" +
+        "Source to check: " + (source || "(none provided)") + "\n\n" +
+        "Submitted by: " + (name || "(anonymous)");
+
+      var url = "https://github.com/Frankytyrone/tuam-records-project/issues/new" +
+        "?labels=correction" +
+        "&title=" + encodeURIComponent("Correction: " + page) +
+        "&body=" + encodeURIComponent(body);
+
+      window.open(url, "_blank", "noopener");
+      status.textContent = "Opening GitHub in a new tab. Sign in (or create a free account) and click \u201cSubmit new issue\u201d to send your report.";
+    });
+  })();
+</script>

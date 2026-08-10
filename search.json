@@ -1,6 +1,7 @@
 ---
 layout: null
 permalink: /search.json
+sitemap: false
 ---
 [
 {% assign searchable_pages = site.pages | where_exp: "p", "p.url != '/search.json'" | where_exp: "p", "p.url != '/search/'" %}
