@@ -16,6 +16,10 @@
       <a class="site-title" href="{{ '/' | relative_url }}">Tuam Records Project
         <small>Documents &middot; Claims &middot; Source Evidence</small>
       </a>
+      <form class="header-search" action="{{ '/search/' | relative_url }}" method="get" role="search">
+        <input type="search" name="q" placeholder="Search the archive&hellip;" aria-label="Search the archive">
+        <button type="submit" aria-label="Search">Search</button>
+      </form>
     </div>
     {% include nav.html %}
   </header>
