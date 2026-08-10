@@ -45,6 +45,7 @@ The owner (Frank) is not a technical person and is openly biased toward the Bon 
 - [x] TRP-010/011/015: ODAIT forensic excavation updates (2025 to 2026); TRP-015 is the primary-source Technical Update 8 (99 remains: 77 plus 22, memorial-garden chamber still unexcavated)
 - [x] TRP-013/014: Chapter 32 (Adoption) and Report of the Confidential Committee, added 10 August 2026 via cloud agent
 - [x] TRP-013/014 (documents.html numbering): media coverage and corrections. Irish Times 7 June 2014 interview (Corless: "I never used that word 'dumped'") and the Associated Press's formal 20 June 2014 correction (withdrew "denied baptism" and "Church teaching" claims after Tuam Archdiocese registry showed 2,000+ baptisms)
+- [x] TRP-031/032/033 (10 August 2026): a new "Broadcast documentaries & recorded testimony" section. TRP-031 is "The Missing Children" (RT&Eacute;/ITV, 2021, the film Nugent's TRP-020 rebuttal responds to); TRP-032 is Catherine Corless's own oral testimony to the Oireachtas Joint Committee on Children, Disability, Equality and Integration, 14 April 2021 (official transcript and recorded broadcast, linked directly to oireachtas.ie); TRP-033 is the BBC's "Ireland's Lost Babies" (Sixsmith, September 2014). Matching entries added to the Timeline, and TRP-031 cross-referenced into the existing Nugent claims entry
 - [ ] Not yet added: dedicated survivor/witness testimony as standalone catalogued documents (memoirs, recorded interviews), local/historical records
 
 **Phase 3: Claim vs Evidence, in progress**
