@@ -40,8 +40,9 @@ The owner (Frank) is not a technical person and is openly biased toward the Bon 
 - [x] TRP-001 to TRP-003: Commission of Investigation Final Report, 2017 test-excavation statement, Institutional Burials Act 2022
 - [x] TRP-004/005: Fifth Interim Report (burials), 2024 peer-reviewed infant-mortality study
 - [x] TRP-006 to TRP-009, TRP-012: Bon Secours & Catholic Church statements (2014 Prone email, 2017 statement, 2021 apology; Archbishop Neary and Archbishop Martin 2021 statements)
-- [x] TRP-010/011: ODAIT forensic excavation updates (2025–2026)
-- [ ] Not yet added: survivor/witness testimony, illegal adoption allegations documents, general media coverage & corrections, local/historical records — **in progress via cloud agent as of 10 Aug 2026**
+- [x] TRP-010/011/015: ODAIT forensic excavation updates (2025–2026), TRP-015 added as the primary-source Technical Update 8 (99 remains = 77 + 22, memorial-garden chamber still unexcavated)
+- [x] TRP-013/014: Media coverage & corrections — Irish Times 7 June 2014 interview (Corless: "I never used that word 'dumped'") and the Associated Press's own formal 20 June 2014 correction (withdrew "denied baptism" and "Church teaching" claims after Tuam Archdiocese registry showed 2,000+ baptisms)
+- [ ] Not yet added: survivor/witness testimony, illegal adoption allegations documents, local/historical records — still in progress
 
 **Phase 3 — Claim vs Evidence: in progress**
 - [x] "Septic tank" claim (nuanced: two structures, remains found in the undetermined-purpose chamber, not the tank itself)
@@ -50,8 +51,12 @@ The owner (Frank) is not a technical person and is openly biased toward the Bon 
 - [x] "No mass grave" 2014 denial vs later official findings
 - [x] "The Catholic Church ran the home" — imprecise; Council owned it, Sisters operated it, diocese was pastoral only
 - [x] "Bon Secours never apologised" — true for 2017, false after Jan 2021
+- [x] "~800 babies found dumped in a septic tank" as reported as settled fact in June 2014 — documented media exaggeration of Corless's own more cautious, pre-excavation hypothesis; corrected on record by both Corless and the AP
+- [x] "Babies denied Catholic baptism per Church teaching" — contradicted by Tuam Archdiocese registry (2,000+ baptisms) and retracted by the AP
 - [ ] Illegal adoption allegations — **in progress**
 - [ ] Survivor/witness testimony — **in progress**
+
+**Note on scope (10 Aug 2026):** the owner asked the agent to look into whether Catherine Corless has a documented bias (e.g. abortion-rights campaigning, anti-Catholic statements) and whether Liam Neeson made "false allegations" in the 2026 film *The Lost Children of Tuam*. Findings: Corless appears in one segment of *The 8th* (2020, a documentary about the 2018 abortion referendum), discussing her Tuam research as historical context — no sourced evidence was found of her personally campaigning on abortion or making anti-Catholic statements, so no such characterisation has been added to the site (this would fail the site's own no-invented-content and no-inflammatory-language rules regardless of who it was about). The film is documented factually in the Timeline (release date, producers, basis) with no claim about Neeson's statements, since no specific sourced quote was found to check — if the owner has a specific Neeson quote in mind, it can be checked against a source and added.
 
 **Phase 4 — Advanced search & tools: not started**
 **Phase 5 — SEO & growth: not started** (don't start until content above is solid)
