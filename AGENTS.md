@@ -53,6 +53,7 @@ The owner (Frank) is not a technical person and is openly biased toward the Bon 
 - [x] "Bon Secours never apologised" — true for 2017, false after Jan 2021
 - [x] "~800 babies found dumped in a septic tank" as reported as settled fact in June 2014 — documented media exaggeration of Corless's own more cautious, pre-excavation hypothesis; corrected on record by both Corless and the AP
 - [x] "Babies denied Catholic baptism per Church teaching" — contradicted by Tuam Archdiocese registry (2,000+ baptisms) and retracted by the AP
+- [x] Brian Nugent's "ossuary" theory (structure built by Galway County Council in the 1970s/80s, not a Home-era burial site) — checked against the Commission's own Fifth Interim Report technical findings (dating to 1937, articulation evidence, the Castrol GTX artefact); contradicted by that report on the same categories of evidence Nugent cites
 - [ ] Illegal adoption allegations — **in progress**
 - [ ] Survivor/witness testimony — **in progress**
 
