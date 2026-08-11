@@ -14,7 +14,7 @@ description: >-
 
     <div class="panel">
       <h3>Correction form</h3>
-      <p>Fill in the fields below. When you submit, your report opens as a new item on the project's public GitHub page, ready to send. You will need a free GitHub account to send it; if you don't have one, <a href="https://github.com/signup" target="_blank" rel="noopener">signing up</a> takes a couple of minutes and costs nothing.</p>
+      <p>Fill in the fields below and submit. There is nothing else to do, no account or sign-up needed.</p>
 
       <form id="correction-form" novalidate>
         <div class="form-row">
@@ -50,17 +50,27 @@ description: >-
           <input type="text" id="corr-name" name="name" placeholder="Leave blank to submit anonymously">
         </div>
 
-        <button type="submit" class="btn btn-primary">Open this as a correction report on GitHub &rarr;</button>
+        <div aria-hidden="true" style="position:absolute; left:-9999px; top:-9999px;">
+          <label for="corr-website">Leave this field blank</label>
+          <input type="text" id="corr-website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit correction</button>
       </form>
       <p id="corr-status" class="source-note" role="status"></p>
     </div>
 
-    <p class="source-note">No email address is published for this project, and none is planned. Every report submitted this way stays as a permanent, dated, public record in the project's repository, which fits how this archive is meant to work: checkable, not private.</p>
+    <p class="source-note">No email address is published for this project, and none is planned. Every genuine report submitted this way is checked against a source and, where it holds up, reflected on the site.</p>
   </div>
 </section>
 
 <script>
   (function () {
+    // Filled in once the hidden relay is deployed (see /cloudflare/README.md).
+    // Until then, this stays empty and the form falls back to the old,
+    // visible GitHub-issue link so the corrections form keeps working.
+    var RELAY_URL = "";
+
     var form = document.getElementById("correction-form");
     var status = document.getElementById("corr-status");
     if (!form) return;
@@ -73,9 +83,32 @@ description: >-
       var issue = document.getElementById("corr-issue").value.trim();
       var source = document.getElementById("corr-source").value.trim();
       var name = document.getElementById("corr-name").value.trim();
+      var website = document.getElementById("corr-website").value;
 
       if (!statement || !issue) {
         status.textContent = "Please fill in the statement and what you believe is wrong before continuing.";
+        return;
+      }
+
+      if (RELAY_URL) {
+        status.textContent = "Sending\u2026";
+        fetch(RELAY_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ page: page, statement: statement, issue: issue, source: source, name: name, website: website })
+        })
+          .then(function (res) { return res.json(); })
+          .then(function (data) {
+            if (data.ok) {
+              status.textContent = "Thank you. Your correction has been submitted and will be checked against a source.";
+              form.reset();
+            } else {
+              status.textContent = data.error || "Something went wrong. Please try again shortly.";
+            }
+          })
+          .catch(function () {
+            status.textContent = "Something went wrong sending this. Please try again shortly.";
+          });
         return;
       }
 
