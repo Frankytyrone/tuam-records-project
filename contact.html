@@ -66,10 +66,7 @@ description: >-
 
 <script>
   (function () {
-    // Filled in once the hidden relay is deployed (see /cloudflare/README.md).
-    // Until then, this stays empty and the form falls back to the old,
-    // visible GitHub-issue link so the corrections form keeps working.
-    var RELAY_URL = "";
+        var RELAY_URL = "https://tuam-corrections-relay.tuamrecordsproject.workers.dev";
 
     var form = document.getElementById("correction-form");
     var status = document.getElementById("corr-status");

@@ -91,7 +91,10 @@ export default {
 
     if (!githubResponse.ok) {
       return jsonResponse(
-        { ok: false, error: "Could not record the correction right now. Please try again shortly." },
+        {
+          ok: false,
+          error: "Could not record the correction right now. Please try again shortly.",
+        },
         502
       );
     }
