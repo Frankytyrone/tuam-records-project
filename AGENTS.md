@@ -83,6 +83,12 @@ The owner (Frank) is not a technical person and is openly biased toward the Bon 
 - [ ] Not yet done: submitting the sitemap to Google Search Console (requires the owner to create/use a Google account; agent cannot do this step)
 - [ ] Not yet done: backlinks/outreach, this depends on the site being finished and stable first
 
+**Phase 6: Hidden corrections relay, started 10 August 2026**
+- [x] Owner asked for two things: (1) a "have your say" comment section, and (2) a way for visitors to submit corrections without ever seeing that the site runs on GitHub. Agreed approach: skip a live public comment section (spam/moderation risk, contradicts the owner's own "set and forget" preference, and unmoderated posts sitting next to sourced content would undermine the site's credibility). A curated "Reader Perspectives" page, built from submissions the agent reviews, was proposed as a lower-risk future alternative if the owner wants it (not yet built).
+- [x] Cloudflare Worker code and deployment instructions added at `cloudflare/corrections-relay.js`, `cloudflare/wrangler.toml`, `cloudflare/README.md`. This is a hidden relay: the visitor's browser only ever talks to a `workers.dev` address, never to github.com; the Worker holds a repo-scoped GitHub token as a Cloudflare secret and opens the correction as a GitHub Issue server-side. `contact.html` already has the `fetch()`-based submission code and a honeypot spam-trap field, gated behind an empty `RELAY_URL` constant so the form keeps working the old way until deployment is complete.
+- [x] Worker deployed live at `https://tuam-corrections-relay.tuamrecordsproject.workers.dev`, `GITHUB_TOKEN` secret set (a repo-scoped, fine-grained GitHub PAT with Issues: Read and write), and `RELAY_URL` in `contact.html` filled in and tested end to end (11 August 2026): a real test submission created a labelled `correction` GitHub Issue, confirming the relay works, then that test issue was closed. Visitors submitting the form now never see GitHub or leave the site; the old GitHub-issue link only shows if `RELAY_URL` is ever emptied again.
+- [x] Comment/"have your say" section: decision unchanged from the note above (skipped for spam/moderation/credibility reasons); not built.
+
 ## Checking for public correction reports (do this at the start of every session)
 
 The Contact page (`contact.html`) has a correction form. There is no email inbox: when a visitor submits it, it opens a pre-filled GitHub Issue, labelled `correction`, on this repository. That is where public correction requests live.
