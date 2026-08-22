@@ -1,17 +1,16 @@
-# Hidden corrections relay
+# Cloudflare Workers for Tuam Records Project
 
-This folder is not part of the Jekyll site. It is a tiny Cloudflare Worker
-that sits between the public correction form on `contact.html` and this
-repository's GitHub Issues.
+This folder is not part of the Jekyll site. It holds two small Workers:
 
-**Why it exists:** the correction form used to send visitors to a
-`github.com/.../issues/new` page. That revealed the site runs on GitHub,
-and required visitors to sign in to GitHub themselves. This Worker removes
-both problems: the visitor's browser only ever talks to the Worker's own
-`workers.dev` address, and the Worker uses a repo-scoped GitHub token,
-stored only as a Cloudflare secret, to open the Issue on their behalf.
+1. **`corrections-relay.js`** (config: `wrangler.toml`) – hidden corrections form relay.
+2. **`page-counter.js`** (config: `page-counter.toml`) – cookieless page-view counter shown in the site footer.
 
-## One-time setup (only needs doing once)
+## Corrections relay
+
+Sits between the public correction form on `contact.html` and this
+repository's GitHub Issues. Visitors never see github.com.
+
+### One-time setup (only needs doing once)
 
 1. Create a free Cloudflare account at <https://dash.cloudflare.com/sign-up>.
 2. Install Wrangler (Cloudflare's deploy tool): `npm install -g wrangler`
@@ -29,12 +28,26 @@ stored only as a Cloudflare secret, to open the Issue on their behalf.
 7. Update the `RELAY_URL` constant near the top of the script in
    `contact.html` to the URL from step 5, then commit and push.
 
+## Page-view counter
+
+Deploy with:
+
+```
+wrangler deploy -c page-counter.toml
+```
+
+Create the KV namespace first if needed:
+
+```
+wrangler kv namespace create PAGE_VIEWS
+```
+
+Then put the returned ID into `page-counter.toml` under `[[kv_namespaces]]`.
+
+The footer in `_includes/footer.html` already points at
+`https://tuam-page-counter.tuamrecordsproject.workers.dev`.
+
 ## Ongoing maintenance
 
-None expected. If the GitHub token is ever revoked or expires, generate
-a new one (same steps 4 and 6) and nothing else needs to change.
-
-If correction volume ever needs raising above Cloudflare Workers' generous
-free-tier request limits, that is a Cloudflare billing question, not a
-code change; the free tier (100,000 requests/day) is expected to be more
-than enough for a corrections form.
+None expected for either Worker under normal use. The free Workers tier is
+enough for a quiet archive site.

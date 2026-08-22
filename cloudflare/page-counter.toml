@@ -1,0 +1,8 @@
+name = "tuam-page-counter"
+main = "page-counter.js"
+compatibility_date = "2026-08-01"
+workers_dev = true
+
+[[kv_namespaces]]
+binding = "PAGE_VIEWS"
+id = "99e49922ef8c4a19bb90a19e13c12abf"
