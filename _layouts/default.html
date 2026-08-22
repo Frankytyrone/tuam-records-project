@@ -36,5 +36,54 @@
   </main>
 
   {% include footer.html %}
+
+  <div id="clarity-consent" class="clarity-consent" hidden>
+    <p>This site uses Microsoft Clarity to count visitors. In Ireland, Clarity needs your OK before it can record a visit.</p>
+    <button type="button" id="clarity-consent-allow" class="btn btn-primary">Allow</button>
+    <button type="button" id="clarity-consent-deny" class="btn">No thanks</button>
+  </div>
+  <script>
+    (function () {
+      function tellClarity(granted) {
+        if (typeof window.clarity !== "function") return;
+        window.clarity("consentv2", {
+          ad_Storage: "denied",
+          analytics_Storage: granted ? "granted" : "denied"
+        });
+      }
+
+      var key = "trp-clarity-consent";
+      var saved = null;
+      try { saved = localStorage.getItem(key); } catch (e) {}
+
+      if (saved === "granted") {
+        tellClarity(true);
+        return;
+      }
+      if (saved === "denied") {
+        tellClarity(false);
+        return;
+      }
+
+      var bar = document.getElementById("clarity-consent");
+      var allow = document.getElementById("clarity-consent-allow");
+      var deny = document.getElementById("clarity-consent-deny");
+      if (!bar || !allow || !deny) return;
+
+      bar.hidden = false;
+
+      allow.addEventListener("click", function () {
+        try { localStorage.setItem(key, "granted"); } catch (e) {}
+        tellClarity(true);
+        bar.hidden = true;
+      });
+
+      deny.addEventListener("click", function () {
+        try { localStorage.setItem(key, "denied"); } catch (e) {}
+        tellClarity(false);
+        bar.hidden = true;
+      });
+    })();
+  </script>
 </body>
 </html>
