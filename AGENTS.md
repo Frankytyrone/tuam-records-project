@@ -80,6 +80,7 @@ The owner (Frank) is not a technical person and is openly biased toward the Bon 
 - [x] Real favicon added (generated, calm archival book icon, no religious symbols), replacing the blank placeholder icon
 - [x] `robots.txt` added, pointing to the sitemap; `jekyll-sitemap` plugin was already installed and active
 - [x] `html lang` changed to `en-IE` to match the site's UK/Irish English content
+- [x] Microsoft Clarity visitor analytics added to `_layouts/default.html` (18 August 2026): free, no Cloudflare domain setup; dashboard at clarity.microsoft.com. Counts only from the day it goes live onward
 - [ ] Not yet done: submitting the sitemap to Google Search Console (requires the owner to create/use a Google account; agent cannot do this step)
 - [ ] Not yet done: backlinks/outreach, this depends on the site being finished and stable first
 
