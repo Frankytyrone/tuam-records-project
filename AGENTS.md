@@ -80,7 +80,7 @@ The owner (Frank) is not a technical person and is openly biased toward the Bon 
 - [x] Real favicon added (generated, calm archival book icon, no religious symbols), replacing the blank placeholder icon
 - [x] `robots.txt` added, pointing to the sitemap; `jekyll-sitemap` plugin was already installed and active
 - [x] `html lang` changed to `en-IE` to match the site's UK/Irish English content
-- [x] Simple page-view counter (22 August 2026): Microsoft Clarity removed after it failed to register Irish visits reliably. Replaced with a cookieless Cloudflare Worker counter that shows "Page views: N" in the site footer. Counts page loads (not unique people). Worker: `cloudflare/page-counter.js`, live at `https://tuam-page-counter.tuamrecordsproject.workers.dev`
+- [x] Simple page-view counter (22 August 2026): Microsoft Clarity removed after it failed to register Irish visits reliably. Replaced with a cookieless Cloudflare Worker counter that shows "Page views: N" in the site footer. Counts page loads (not unique people). Worker: `cloudflare/page-counter.js`, live at `https://tuam-page-counter.tuamrecordsproject.workers.dev`. Bot filtering added the same day: known crawler user-agents, missing Origin, and automated browsers are not counted
 - [ ] Not yet done: submitting the sitemap to Google Search Console (requires the owner to create/use a Google account; agent cannot do this step)
 - [ ] Not yet done: backlinks/outreach, this depends on the site being finished and stable first
 
