@@ -511,46 +511,10 @@ footer.site-footer .disclaimer { margin-top: 18px; color: #9FB3C0; font-size: 0.
 footer.site-footer nav { margin-bottom: 10px; }
 footer.site-footer nav a { margin-right: 18px; }
 
-/* --------------------------------------------------------------------------
-   Clarity consent bar (required for Ireland / EEA visitor counting)
-   -------------------------------------------------------------------------- */
-
-.clarity-consent {
-  position: fixed;
-  left: 16px;
-  right: 16px;
-  bottom: 16px;
-  z-index: 1000;
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 14px 16px;
-  background: var(--white);
-  border: 1px solid var(--border);
-  box-shadow: 0 8px 24px rgba(32, 33, 36, 0.12);
-  color: var(--charcoal);
-  font-size: 0.9rem;
-  line-height: 1.45;
-}
-
-.clarity-consent[hidden] { display: none !important; }
-
-.clarity-consent p {
-  margin: 0 0 12px;
-}
-
-.clarity-consent .btn {
-  margin-right: 8px;
-  margin-top: 0;
-  cursor: pointer;
-  background: var(--pale-panel);
-  color: var(--slate-blue);
-  border-color: var(--border);
-}
-
-.clarity-consent .btn-primary {
-  background: var(--gold);
-  color: var(--charcoal);
-  border-color: transparent;
+footer.site-footer .page-views {
+  margin-top: 10px;
+  color: #9FB3C0;
+  font-size: 0.82rem;
 }
 
 /* --------------------------------------------------------------------------
